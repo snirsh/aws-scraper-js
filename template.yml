@@ -1,0 +1,15 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: Node.js Scraper Application
+
+Resources:
+  ScraperFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: handler.getWixJobs
+      Runtime: nodejs16.x
+      CodeUri: .
+      MemorySize: 1024
+      Timeout: 30
+      Policies:
+        - AWSLambdaBasicExecutionRole
