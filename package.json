@@ -1,0 +1,15 @@
+{
+  "name": "scraping_example",
+  "version": "1.0.0",
+  "main": "handler.mjs",
+  "type": "module",
+  "license": "MIT",
+  "dependencies": {
+    "node-fetch": "^3.3.2",
+    "puppeteer": "^22.12.1"
+  },
+  "scripts": {
+    "start": "node handler.mjs",
+    "test": "node test.js"
+  }
+}
