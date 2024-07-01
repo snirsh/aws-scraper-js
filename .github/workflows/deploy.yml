@@ -26,9 +26,17 @@ jobs:
           aws-region: ${{ env.AWS_REGION }}
 
       - name: Set up node
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
           node-version: '16'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.12
 
       - name: Install SAM
         uses: aws-actions/setup-sam@v2
