@@ -21,14 +21,14 @@ jobs:
       - name: configure aws credentials
         uses: aws-actions/configure-aws-credentials@v4.0.2
         with:
-          role-to-assume: arn:aws:iam::339712824095:role/github-actions-deploy
+          role-to-assume: arn:aws:iam::339712844607:role/github-actions-deploy
           role-session-name: GitHub_to_AWS_via_FederatedOIDC
           aws-region: ${{ env.AWS_REGION }}
 
-      - name: Set up Python
-        uses: actions/setup-python@v2
+      - name: Set up node
+        uses: actions/setup-node@v2
         with:
-          python-version: 3.12
+          node-version: '16'
 
       - name: Install SAM
         uses: aws-actions/setup-sam@v2
