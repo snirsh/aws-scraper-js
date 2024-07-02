@@ -10,6 +10,7 @@
   },
   "scripts": {
     "start": "node handler.mjs",
-    "test": "node test.js"
+    "test": "node test.js",
+    "postinstall": "npm config set registry https://registry.npmjs.org/"
   }
 }
