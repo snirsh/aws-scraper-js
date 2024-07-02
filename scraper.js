@@ -5,13 +5,7 @@ export const extractJobs = async (event, context) => {
     const BASE_URL = "https://careers.wix.com/positions?page=100"
     let browser;
     try {
-        const isLocal = process.env.AWS_EXECUTION_ENV === undefined;
-
-        const browser = isLocal
-            // if we are running locally, use the puppeteer that is installed in the node_modules folder
-            ? await require('puppeteer').launch()
-            // if we are running in AWS, download and use a compatible version of chromium at runtime
-            : await puppeteer.launch({
+        const browser = await puppeteer.launch({
                 args: chromium.args,
                 defaultViewport: chromium.defaultViewport,
                 executablePath: await chromium.executablePath(
