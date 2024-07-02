@@ -1,8 +1,10 @@
+import chromium from '@sparticuz/chromium';
 import puppeteer from 'puppeteer-core';
-import chromium from '@sparticuz/chromium-min';
 
 export const getWixJobs = async (event, context) => {
     try {
+        const BASE_URL = "https://www.wix.com/careers/positions?page=100";
+
         const browser = await puppeteer.launch({
             args: chromium.args,
             defaultViewport: chromium.defaultViewport,
@@ -12,10 +14,7 @@ export const getWixJobs = async (event, context) => {
 
         const page = await browser.newPage();
 
-        await page.goto("https://www.example.com", { waitUntil: "networkidle0" });
-
-
-        await page.goto(BASE_URL);
+        await page.goto(BASE_URL, { waitUntil: "networkidle0" });
 
         const jobs = await page.evaluate(() => {
             const elements = document.querySelectorAll('div[id^="comp-lbys0nar__"]');
