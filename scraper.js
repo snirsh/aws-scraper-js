@@ -1,8 +1,9 @@
-import chromium from 'chrome-aws-lambda'
+import puppeteer from 'puppeteer-core';
+import chromium from '@sparticuz/chromium';
 
 export const extractJobs = async (event, context) => {
     const BASE_URL = "https://careers.wix.com/positions?page=100"
-    const browser = await chromium.puppeteer.launch({
+    const browser = await puppeteer.launch({
         args: chromium.args,
         defaultViewport: chromium.defaultViewport,
         executablePath: await chromium.executablePath,

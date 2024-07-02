@@ -5,12 +5,14 @@
   "type": "module",
   "license": "MIT",
   "dependencies": {
-    "chrome-aws-lambda": "^10.1.0",
-    "node-fetch": "^3.3.2"
+    "node-fetch": "^3.3.2",
+    "puppeteer-core": "^22.12.1"
   },
   "scripts": {
     "start": "node handler.mjs",
-    "test": "node test.js",
-    "postinstall": "npm config set registry https://registry.npmjs.org/"
+    "test": "node test.js"
+  },
+  "devDependencies": {
+    "@sparticuz/chromium": "^123.0.1"
   }
 }
