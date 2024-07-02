@@ -29,9 +29,11 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: '20'
+          registry-url: 'https://registry.npmjs.org'
 
       - name: Install dependencies
         run: npm install
+
 
       - name: Set up Python
         uses: actions/setup-python@v2
